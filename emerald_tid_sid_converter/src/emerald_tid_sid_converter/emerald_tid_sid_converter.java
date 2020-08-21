@@ -170,7 +170,71 @@ public class emerald_tid_sid_converter
 		//breaks in the patterns below are at 0xAF (175), 0xB7 (183), 0xB9 (185), and 0xBA (186)
 		String[] arr = {"0","1","2","3","4","5","6","7","8","9","!","?",".","-","...","(lefty \")","(righty \"","(lefty ')","(righty ')","♂","♀",",","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
 		
-		if (xx == 0)
+		//these cases broke a few patterns so they now go first so they don't break the logic
+		if (0x2F <= xx && 0x5C <= XX && XX <= 0x8F)
+		{
+			System.out.println(" Box 3:  (?\"0......o  ) [righty \"; two ...; ends with two spaces]\r\n" + 
+					" Box 4:  (E" + arr[indexConverter(0x5F+XX)] + "...!n   ) [one ...; ends with three spaces]\r\n" + 
+					" Box 5:  (VA!n" + arr[indexConverter(0xBF+xx)] + "B!n)\r\n" + 
+					" Box 6:  ( ?\"......Rm ) [starts with space; righty \"; two ...; ends with space]\r\n" + 
+					" Box 7:  (?\"mFlo  ) [righty \"; lower case L; ends with two spaces]\r\n" + 
+					" Box 8:  (EyLRo   ) [ends with three spaces]\r\n" + 
+					" Box 9:  (m\"RohT-n) [righty \"]\r\n" + 
+					" Box 10: ( ?\"YN?n ) [starts with space; righty \"; ends with space]\r\n" + 
+					" Box 11: (?\"FNRo  ) [righty \"; ends with two spaces]\r\n" + 
+					" Box 12: (Eb ?n   ) [space between b and ?; ends with three spaces]\r\n" + 
+					" Box 13: (lGEn ...?q) [lower case L; space between n and ...; one ...]\r\n" + 
+					" Box 14: (BOX 14) [leave the rest empty]");
+		}
+		else if (0x2F <= xx && xx <= 5F && 0xBB <= XX && XX <= 0xEE)
+		{
+		
+			System.out.println(" Box 3:  (?\"" + arr[indexConverter(XX)] + "......o  ) [righty \"; two ...; ends with two spaces]\r\n" + 
+					" Box 4:  (EiA!n   ) [ends with three spaces]\r\n" + 
+					" Box 5:  (" + arr[indexConverter(0x8C+xx)] + "B!n......Rm) [two ...]\r\n" + 
+					" Box 6:  ( ?\"mFlo ) [starts with space; righty \"; lower case L; ends with space]\r\n" + 
+					" Box 7:  (?\"yLRo  ) [righty \"; ends with two spaces]\r\n" + 
+					" Box 8:  (Em\"Ro   ) [righty \"; ends with three spaces]\r\n" + 
+					" Box 9:  (hT-nYN?n)\r\n" + 
+					" Box 10: ( ?\"FNRo ) [starts with space; righty \"; ends with space]\r\n" + 
+					" Box 11: (?\"b ?n  ) [righty \"; space between b and ?; ends with two spaces]\r\n" + 
+					" Box 12: (ElGEn   ) [lower case L; ends with three spaces]\r\n" + 
+					" Box 13: ( ...?q    ) [starts with space; one ...; ends with four spaces]\r\n" + 
+					" Box 14: (BOX 14) [leave the rest empty]");
+		}
+		else if (0x2F <= xx && xx <= 5F && 0xEF <= XX && XX <= 0xFF)
+		{
+			System.out.println(" Box 3:  (?\"F\"...o  ) [righty \"; lefty \"; one ...; ends with two spaces]\r\n" + 
+					" Box 4:  (E*" + arr[indexConverter(XX-0x30)] + "...!n   ) [two ...; ends with three spaces]\r\n" + 
+					"   -Index of * = XX-30\r\n" + 
+					" Box 5:  (iA!n" + arr[indexConverter(0x8C+xx)] + "B!n)\r\n" + 
+					" Box 6:  ( ?\"......Rm ) [starts with space; righty \"; two ...; ends with space]\r\n" + 
+					" Box 7:  (?\"mFlo  ) [righty \"; lower case L; ends with two spaces]\r\n" + 
+					" Box 8:  (EyLRo   ) [ends with three spaces]\r\n" + 
+					" Box 9:  (m\"RohT-n) [righty \"]\r\n" + 
+					" Box 10: ( ?\"YN?n ) [starts with space; righty \"; ends with space]\r\n" + 
+					" Box 11: (?\"FNRo  ) [righty \"; ends with two spaces]\r\n" + 
+					" Box 12: (Eb ?n   ) [space between b and ?; ends with three spaces]\r\n" + 
+					" Box 13: (lGEn ...?q) [lower case L; space between n and ...; one ...]\r\n" + 
+					" Box 14: (BOX 14) [leave the rest empty]");
+		}
+		else if (0x30 <= xx && xx <= 62 && 0x63 <= XX && XX <= 0x8F)
+		{
+			System.out.println(" Box 3:  (?\"0......o  ) [righty \"; two ... ; ends with two spaces]\r\n" + 
+					" Box 4:  (E" + arr[indexConverter(0x5F+XX)] + "...!n   ) [two ...; ends with three spaces]\r\n" + 
+					" Box 5:  (iA!n" + arr[indexConverter(0x8B+xx)] + "B!n)\r\n" + 
+					" Box 6:  ( ?\"......Rm ) [starts with space; righty \"; two ...; ends with space]\r\n" + 
+					" Box 7:  (?\"mFlo  ) [righty \"; lower case L; ends with two spaces]\r\n" + 
+					" Box 8:  (EyLRo   ) [ends with three spaces]\r\n" + 
+					" Box 9:  (m\"RohT-n) [righty \"]\r\n" + 
+					" Box 10: ( ?\"YN?n ) [starts with space; righty \"; ends with space]\r\n" + 
+					" Box 11: (?\"FNRo  ) [righty \"; ends with two spaces]\r\n" + 
+					" Box 12: (Eb ?n   ) [space between b and ?; ends with three spaces]\r\n" + 
+					" Box 13: (lGEn ...?q) [lower case L; space between n and ...; one ...]\r\n" + 
+					" Box 14: (BOX 14) [leave the rest empty]");
+		}
+		//end special cases
+		else if (xx == 0)
 		{
 			if (XX == 0)
 			{
@@ -312,21 +376,7 @@ public class emerald_tid_sid_converter
 				System.out.println("looks like there's a bug here. oops!");
 			}
 		}
-		else if (0x2F <= xx && 0x5C <= XX && XX <= 0x8F)
-		{
-			System.out.println(" Box 3:  (?\"0......o  ) [righty \"; two ...; ends with two spaces]\r\n" + 
-					" Box 4:  (E" + arr[indexConverter(0x5F+XX)] + "...!n   ) [one ...; ends with three spaces]\r\n" + 
-					" Box 5:  (VA!n" + arr[indexConverter(0xBF+xx)] + "B!n)\r\n" + 
-					" Box 6:  ( ?\"......Rm ) [starts with space; righty \"; two ...; ends with space]\r\n" + 
-					" Box 7:  (?\"mFlo  ) [righty \"; lower case L; ends with two spaces]\r\n" + 
-					" Box 8:  (EyLRo   ) [ends with three spaces]\r\n" + 
-					" Box 9:  (m\"RohT-n) [righty \"]\r\n" + 
-					" Box 10: ( ?\"YN?n ) [starts with space; righty \"; ends with space]\r\n" + 
-					" Box 11: (?\"FNRo  ) [righty \"; ends with two spaces]\r\n" + 
-					" Box 12: (Eb ?n   ) [space between b and ?; ends with three spaces]\r\n" + 
-					" Box 13: (lGEn ...?q) [lower case L; space between n and ...; one ...]\r\n" + 
-					" Box 14: (BOX 14) [leave the rest empty]");
-		}
+
 		else if (xx <= 0x2E)
 		{
 			if (XX == 0)
@@ -452,58 +502,6 @@ public class emerald_tid_sid_converter
 			else
 			{
 				System.out.println("looks like there's a bug here. oops!");
-			}
-		}
-		else if (0x2F <= xx && xx <= 5F)
-		{
-			if (0xBB <= XX && XX <= 0xEE)
-			{
-				System.out.println(" Box 3:  (?\"" + arr[indexConverter(XX)] + "......o  ) [righty \"; two ...; ends with two spaces]\r\n" + 
-						" Box 4:  (EiA!n   ) [ends with three spaces]\r\n" + 
-						" Box 5:  (" + arr[indexConverter(0x8C+xx)] + "B!n......Rm) [two ...]\r\n" + 
-						" Box 6:  ( ?\"mFlo ) [starts with space; righty \"; lower case L; ends with space]\r\n" + 
-						" Box 7:  (?\"yLRo  ) [righty \"; ends with two spaces]\r\n" + 
-						" Box 8:  (Em\"Ro   ) [righty \"; ends with three spaces]\r\n" + 
-						" Box 9:  (hT-nYN?n)\r\n" + 
-						" Box 10: ( ?\"FNRo ) [starts with space; righty \"; ends with space]\r\n" + 
-						" Box 11: (?\"b ?n  ) [righty \"; space between b and ?; ends with two spaces]\r\n" + 
-						" Box 12: (ElGEn   ) [lower case L; ends with three spaces]\r\n" + 
-						" Box 13: ( ...?q    ) [starts with space; one ...; ends with four spaces]\r\n" + 
-						" Box 14: (BOX 14) [leave the rest empty]");
-			}
-			else if (0xEF <= XX && XX <= 0xFF)
-			{
-				System.out.println(" Box 3:  (?\"F\"...o  ) [righty \"; lefty \"; one ...; ends with two spaces]\r\n" + 
-						" Box 4:  (E*" + arr[indexConverter(XX-0x30)] + "...!n   ) [two ...; ends with three spaces]\r\n" + 
-						"   -Index of * = XX-30\r\n" + 
-						" Box 5:  (iA!n" + arr[indexConverter(0x8C+xx)] + "B!n)\r\n" + 
-						" Box 6:  ( ?\"......Rm ) [starts with space; righty \"; two ...; ends with space]\r\n" + 
-						" Box 7:  (?\"mFlo  ) [righty \"; lower case L; ends with two spaces]\r\n" + 
-						" Box 8:  (EyLRo   ) [ends with three spaces]\r\n" + 
-						" Box 9:  (m\"RohT-n) [righty \"]\r\n" + 
-						" Box 10: ( ?\"YN?n ) [starts with space; righty \"; ends with space]\r\n" + 
-						" Box 11: (?\"FNRo  ) [righty \"; ends with two spaces]\r\n" + 
-						" Box 12: (Eb ?n   ) [space between b and ?; ends with three spaces]\r\n" + 
-						" Box 13: (lGEn ...?q) [lower case L; space between n and ...; one ...]\r\n" + 
-						" Box 14: (BOX 14) [leave the rest empty]");
-			}
-		}
-		else if (0x30 <= xx && xx <= 62)
-		{
-			if (0x63 <= XX && XX <= 0x8F)
-			{
-				System.out.println(" Box 3:  (?\"0......o  ) [righty \"; two ... ; ends with two spaces]\r\n" + 
-						" Box 4:  (E" + arr[indexConverter(0x5F+XX)] + "...!n   ) [two ...; ends with three spaces]\r\n" + 
-						" Box 5:  (iA!n" + arr[indexConverter(0x8B+xx)] + "B!n)\r\n" + 
-						" Box 6:  ( ?\"......Rm ) [starts with space; righty \"; two ...; ends with space]\r\n" + 
-						" Box 7:  (?\"mFlo  ) [righty \"; lower case L; ends with two spaces]\r\n" + 
-						" Box 8:  (EyLRo   ) [ends with three spaces]\r\n" + 
-						" Box 9:  (m\"RohT-n) [righty \"]\r\n" + 
-						" Box 10: ( ?\"YN?n ) [starts with space; righty \"; ends with space]\r\n" + 
-						" Box 11: (?\"FNRo  ) [righty \"; ends with two spaces]\r\n" + 
-						" Box 12: (Eb ?n   ) [space between b and ?; ends with three spaces]\r\n" + 
-						" Box 13: (lGEn ...?q) [lower case L; space between n and ...; one ...]\r\n" + 
-						" Box 14: (BOX 14) [leave the rest empty]");
 			}
 		}
 		else if (xx <= 0x62)
