@@ -171,7 +171,7 @@ public class emerald_tid_sid_converter
 		String[] arr = {"0","1","2","3","4","5","6","7","8","9","!","?",".","-","...","(lefty \")","(righty \"","(lefty ')","(righty ')","♂","♀",",","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
 		
 		//these cases broke a few patterns so they now go first so they don't break the logic
-		if (0x2F <= xx && 0x5C <= XX && XX <= 0x8F)
+		if (0x01 <= xx && xx <= 0x2F && 0x5C <= XX && XX <= 0x8F)
 		{
 			System.out.println(" Box 3:  (?\"0......o  ) [righty \"; two ...; ends with two spaces]\r\n" + 
 					" Box 4:  (E" + arr[indexConverter(0x5F+XX)] + "...!n   ) [one ...; ends with three spaces]\r\n" + 
