@@ -1,5 +1,6 @@
 package com.jakegrubbs;
 
+import com.jakegrubbs.helpers.HexHelpers;
 import com.jakegrubbs.models.ConsoleMenu;
 import com.jakegrubbs.models.enums.Device;
 import com.jakegrubbs.models.enums.IDType;
