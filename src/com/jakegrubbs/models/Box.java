@@ -1,13 +1,14 @@
 package com.jakegrubbs.models;
 
 public class Box {
+    private int number;
+    private String name;
+    private final String originalName = "Box " + number;
+
     public Box(int number, String name) {
         this.number = number;
         this.name = name;
     }
-
-    private int number;
-    private String name;
 
     public int getNumber() {
         return number;
@@ -23,5 +24,9 @@ public class Box {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String toString() {
+        return originalName + ": (" + name + ")";
     }
 }

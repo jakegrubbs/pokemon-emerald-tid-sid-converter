@@ -20,7 +20,7 @@ public class HexHelpers {
         put("AC", "?");
         put("AD", ".");
         put("AE", "-");
-        put("BO", "…");
+        put("B0", "…");
         put("B1", "”");
         put("B2", "”");
         put("B3", "‘");
