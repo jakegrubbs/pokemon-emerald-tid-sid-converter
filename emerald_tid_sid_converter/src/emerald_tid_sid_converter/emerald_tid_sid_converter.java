@@ -186,7 +186,7 @@ public class emerald_tid_sid_converter
 					" Box 13: (lGEn ...?q) [lower case L; space between n and ...; one ...]\r\n" + 
 					" Box 14: (BOX 14) [leave the rest empty]");
 		}
-		else if (0x2F <= xx && xx <= 5F && 0xBB <= XX && XX <= 0xEE)
+		else if (0x2F <= xx && xx <= 0x5F && 0xBB <= XX && XX <= 0xEE)
 		{
 		
 			System.out.println(" Box 3:  (?\"" + arr[indexConverter(XX)] + "......o  ) [righty \"; two ...; ends with two spaces]\r\n" + 
@@ -202,7 +202,7 @@ public class emerald_tid_sid_converter
 					" Box 13: ( ...?q    ) [starts with space; one ...; ends with four spaces]\r\n" + 
 					" Box 14: (BOX 14) [leave the rest empty]");
 		}
-		else if (0x2F <= xx && xx <= 5F && 0xEF <= XX && XX <= 0xFF)
+		else if (0x2F <= xx && xx <= 0x5F && 0xEF <= XX && XX <= 0xFF)
 		{
 			System.out.println(" Box 3:  (?\"F\"...o  ) [righty \"; lefty \"; one ...; ends with two spaces]\r\n" + 
 					" Box 4:  (E*" + arr[indexConverter(XX-0x30)] + "...!n   ) [two ...; ends with three spaces]\r\n" + 
@@ -218,7 +218,7 @@ public class emerald_tid_sid_converter
 					" Box 13: (lGEn ...?q) [lower case L; space between n and ...; one ...]\r\n" + 
 					" Box 14: (BOX 14) [leave the rest empty]");
 		}
-		else if (0x30 <= xx && xx <= 62 && 0x63 <= XX && XX <= 0x8F)
+		else if (0x30 <= xx && xx <= 0x62 && 0x63 <= XX && XX <= 0x8F)
 		{
 			System.out.println(" Box 3:  (?\"0......o  ) [righty \"; two ... ; ends with two spaces]\r\n" + 
 					" Box 4:  (E" + arr[indexConverter(0x5F+XX)] + "...!n   ) [two ...; ends with three spaces]\r\n" + 
